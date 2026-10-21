@@ -37,6 +37,10 @@ jobs:
         run: npm run build
 
       - uses: actions/configure-pages@v5
+        with:
+          # 仓库首次运行时 Pages 还没启用，这里自动开启并把 Source 设为 GitHub Actions，
+          # 省去手动去 Settings 点一遍
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
